@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dashboard - Student Portal</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <button id="hamburger">&#9776;</button>
+    <h1 id="dashboardTitle">Dashboard</h1>
+    <button id="bell">&#128276;</button>
+  </header>
+
+  <aside id="sidebar" class="hidden">
+    <div id="profile-icon">👤</div>
+    <div id="profile-name"></div>
+    <ul>
+      <li id="dashboard-tab">Dashboard</li>
+      <li id="student-info-tab">Student Info</li>
+      <li id="course-materials-tab">Course Materials</li>
+      <li id="announcements-tab">Announcements</li>
+      <li id="timetable-tab">Timetable</li>
+      <li id="results-tab">Results</li>
+      <li id="profile-settings-tab">Profile Settings</li>
+      <li id="logout-tab">Logout</li>
+    </ul>
+  </aside>
+
+  <main>
+    <div id="content-area">
+      <h2 id="welcomeMessage"></h2>
+    </div>
+  </main>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>
