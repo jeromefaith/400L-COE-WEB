@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+@theme {
+  --color-light-green: #6b8c44;
+  --color-dark-green: #33691e;
+  --color-body-green: #dcedc8;
+  --color-border-clr: #ccc;
+}
+
+@layer components {
+  .sign-in-input {
+    @apply border-1 border-border-clr p-3 rounded-sm w-full my-2;
+  }
+  .sidebar-links li a {
+    @apply text-xl  hover:underline;
+  }
+  .sidebar-links li a.active {
+    @apply text-black font-medium;
+  }
+}

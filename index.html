@@ -1,109 +1,14 @@
-<!DOCTYPE>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Login - 400L COE WEB</title>
-<style>
-  body {
-    font-family: Arial, sans-serif;
-    background-color: #6b8c44;
-    display: flex;
-    height: 100vh;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
-  }
-  .login-box {
-    background: white;
-    padding: 30px 40px;
-    border-radius: 8px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.2);
-    width: 320px;
-  }
-  .login-box h2 {
-    text-align: center;
-    color: #33691e;
-    margin-bottom: 20px;
-  }
-  input[type="text"], input[type="password"] {
-    width: 100%;
-    padding: 12px;
-    margin: 10px 0 15px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-  }
-  button {
-    width: 100%;
-    padding: 12px;
-    background-color: #558b2f;
-    color: white;
-    font-weight: bold;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  button:hover {
-    background-color: #33691e;
-  }
-  .forgot-password {
-
-text-align: right;
-    margin-top: 10px;
-  }
-  .forgot-password a {
-    color: #33691e;
-    text-decoration: none;
-    font-size: 14px;
-  }
-  .forgot-password a:hover {
-    text-decoration: underline;
-  }
-</style>
-</head>
-<body>
-
-  <div class="login-box">
-    <h2>Student Portal Login</h2>
-    <form id="loginForm">
-      <input type="text" id="matric" placeholder="Matric Number" required />
-      <input type="password" id="password" placeholder="Password" required />
-      <button type="submit">Login</button>
-    </form>
-    <div class="forgot-password">
-      <a href="#">Forgot Password?</a>
-    </div>
-  </div>
-
-  <script>
-    // Sample users (replace with fetch from users.json if needed)
-    const users = [
-      { matric: 'ENG/COE/22003791', firstName: 'Jerome', lastName: 'Faith', password: 'default123' },
-      { matric: 'ENG/COE/22003776', firstName: 'Tracy', lastName: 'Edomwonyi', password: 'default123' },
-      { matric: 'ENG/COE/22003814', firstName: 'Toluwani',  lastName: 'Usman', password: 'default123' },
-      { matric: 'ENG/COE/22002620', firstName: 'Cherish', lastName:'Edeoghon', password: 'default123' },
-      { matric: 'ENG/COE/22007777', firstName: 'Ayeni', lastName:'Ose', password: 'default123' },
-    ];
-
-    const form = document.getElementById('loginForm');
-
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-
-const matric = document.getElementById('matric').value.trim();
-      const password = document.getElementById('password').value;
-
-      const user = users.find(u => u.matric === matric && u.password === password);
-
-      if(user) {
-        localStorage.setItem('loggedUser', JSON.stringify(user));
-
-        window.location.href = "dashboard.html";
-      } else {
-        alert('Invalid matric number or password. Please try again.');
-      }
-    });
-  </script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/index.css" />
+    <title>400-COE-WEB</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>
