@@ -6,7 +6,7 @@ interface Announcement {
   createdAt: string;
 }
 
-export default function AdminAnnouncements() {
+export default function SetAnnouncements() {
   const [message, setMessage] = useState("");
   const [status, setStatus] = useState("");
   const [announcements, setAnnouncements] = useState<Announcement[]>([]);

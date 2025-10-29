@@ -7,7 +7,7 @@ import StudentsInfo from "./routes/StudentsInfo";
 import ChangePassword from "./routes/ChangePassword";
 import Login from "./routes/Login";
 import Timetable from "./routes/Timetable";
-import SetAnnouncements from "./routes/SetAnnouncements";
+import SetAnnouncements from "./routes/setAnnouncements";
 
 const App = () => {
   return (
