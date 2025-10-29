@@ -12,7 +12,7 @@ const FinishedTable: React.FC = () => {
   useEffect(() => {
     const fetchTable = async () => {
       try {
-        const res = await fetch("../../../Database/TableData.json");
+        const res = await fetch("/api/getTable");
         if (!res.ok) {
           const err = await res.json();
           throw new Error(err.error || "Failed to fetch table data");
@@ -28,7 +28,7 @@ const FinishedTable: React.FC = () => {
   }, []);
 
   if (error) return <p className='text-red-500'>{error}</p>;
-  if (!tableData) return <p>Loading table...</p>;
+  if (!tableData) return <p className='text-2xl'>Loading table...</p>;
 
   return (
     <div className='p-6 my-10'>

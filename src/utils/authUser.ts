@@ -1,16 +1,14 @@
 import type { Student } from "../context/userContext";
 
 export const authUser = async (matno: string, password: string) => {
-  const response = await fetch("../../Database/StudentsDB.json");
-  const StudentsDB: Student[] = await response.json();
+  const res = await fetch("/api/authenticate", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ matno, password }),
+  });
+  const data = await res.json();
 
-  // Find the student whose matno and password match
-  const student = StudentsDB.find(
-    (s) =>
-      s.matno.toUpperCase() === matno.toUpperCase() &&
-      s.password.toLowerCase() === password.toLowerCase()
-  );
-
+  const student: Student | null = res.ok ? data.user : null;
   // Return authentication result
   if (student) {
     return {
