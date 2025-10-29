@@ -6,6 +6,7 @@ export interface Student {
   gender: string | null;
   password: string;
   matno: string;
+  status?: string;
 }
 
 // 🧠 Define the shape of the context

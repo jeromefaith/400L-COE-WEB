@@ -4,7 +4,11 @@ import Dashboard from "./routes/Dashboard";
 import ProtectedRoute from "./routes/ProtectedRoute";
 import DashboardLayout from "./layouts/DashboardLayout";
 import StudentsInfo from "./routes/StudentsInfo";
+import ChangePassword from "./routes/ChangePassword";
 import Login from "./routes/Login";
+import Timetable from "./routes/Timetable";
+import SetAnnouncements from "./routes/SetAnnouncements";
+
 const App = () => {
   return (
     <Routes>
@@ -24,6 +28,30 @@ const App = () => {
           element={
             <ProtectedRoute>
               <StudentsInfo />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path='/change-password'
+          element={
+            <ProtectedRoute>
+              <ChangePassword />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path='/timetable'
+          element={
+            <ProtectedRoute>
+              <Timetable />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path='/set-announcements'
+          element={
+            <ProtectedRoute>
+              <SetAnnouncements />
             </ProtectedRoute>
           }
         />

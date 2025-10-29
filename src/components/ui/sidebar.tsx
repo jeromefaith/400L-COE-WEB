@@ -36,13 +36,17 @@ const Sidebar = ({ isSidebarOpen }: { isSidebarOpen: boolean }) => {
           <NavLink to='/student-info'>Student Info</NavLink>
         </li>
         <li>
-          <NavLink to='/course-materials'>Course Materials</NavLink>
-        </li>
-        <li>
           <NavLink to='/timetable'>Timetable</NavLink>
         </li>
+        {user?.status === "admin" && (
+          <li>
+            <NavLink to='/set-announcements' className='text-[1rem]'>
+              Set Announcements
+            </NavLink>
+          </li>
+        )}
         <li>
-          <NavLink to='/results'>Results</NavLink>
+          <NavLink to='/change-password'>Change password</NavLink>
         </li>
         <li>
           <button onClick={handleLogout}>Logout</button>

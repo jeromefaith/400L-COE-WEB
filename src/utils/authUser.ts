@@ -1,6 +1,9 @@
-import { StudentsDB } from "../studentsDb";
+import type { Student } from "../context/userContext";
 
-export const authUser = (matno: string, password: string) => {
+export const authUser = async (matno: string, password: string) => {
+  const response = await fetch("../../Database/StudentsDB.json");
+  const StudentsDB: Student[] = await response.json();
+
   // Find the student whose matno and password match
   const student = StudentsDB.find(
     (s) =>

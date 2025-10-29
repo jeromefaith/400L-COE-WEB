@@ -26,14 +26,15 @@ const Login = () => {
     const { name, value } = event.target;
     setLoginFields({ ...loginFields, [name]: value.trim() });
   };
-  const handleLogin = (e: React.FormEvent<HTMLFormElement>) => {
+
+  const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const { errors, isValid } = validateInputs(password, matno);
 
     if (errors.password || errors.matno) return setLoginError(errors);
     else if (isValid) {
       setLoginError(defaultFieldValues);
-      const { success, student, message } = authUser(matno, password);
+      const { success, student, message } = await authUser(matno, password);
 
       if (success && student) {
         login(student);

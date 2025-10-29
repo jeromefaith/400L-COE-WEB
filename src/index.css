@@ -17,4 +17,8 @@
   .sidebar-links li a.active {
     @apply text-black font-medium;
   }
+  table input,
+  label input {
+    border: 1px solid var(--color-border-clr) !important;
+  }
 }

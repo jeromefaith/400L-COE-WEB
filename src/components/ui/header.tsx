@@ -1,5 +1,7 @@
+import { useState } from "react";
 import MenuIcon from "../../assets/icon-menu.svg?react";
 import NotificationIcon from "../../assets/icon-notification.svg?react";
+import Announcements from "./announcements";
 
 type HeaderProps = {
   isSidebarOpen: boolean;
@@ -7,8 +9,9 @@ type HeaderProps = {
 };
 
 const Header = ({ setIsSidebarOpen, isSidebarOpen }: HeaderProps) => {
+  const [showAnnouncements, setShowAnnouncements] = useState(false);
   return (
-    <header className='bg-light-green px-4 lg:px-10 py-6 flex justify-between items-center'>
+    <header className='bg-light-green px-4 lg:px-10 relative py-6 flex justify-between items-center'>
       <MenuIcon
         onClick={() => setIsSidebarOpen(!isSidebarOpen)}
         className='cursor-pointer'
@@ -17,8 +20,10 @@ const Header = ({ setIsSidebarOpen, isSidebarOpen }: HeaderProps) => {
       <NotificationIcon
         width={"2rem"}
         height={"2rem"}
+        onClick={() => setShowAnnouncements(!showAnnouncements)}
         className='cursor-pointer'
       />
+      {showAnnouncements && <Announcements />}
     </header>
   );
 };
