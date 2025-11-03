@@ -13,8 +13,8 @@ const Sidebar = ({ isSidebarOpen }: { isSidebarOpen: boolean }) => {
 
   return (
     <nav
-      className={`py-8 px-4 absolute -left-[120%] lg:relative bg-light-green w-[13rem] h-screen ${
-        isSidebarOpen ? "lg:block left-0 " : "lg:hidden -left-1/2"
+      className={`py-8 px-4 absolute lg:relative lg:left-0 bg-light-green w-[13rem] transition-all duration-125 h-screen ${
+        isSidebarOpen ? "lg:block -left-[120%]" : "lg:hidden left-0"
       }`}
     >
       <div className='mb-10 text-white'>

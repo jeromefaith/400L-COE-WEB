@@ -12,7 +12,7 @@ import SetAnnouncements from "./routes/setAnnouncements";
 const App = () => {
   return (
     <Routes>
-      <Route path='login' element={<Login />} />
+      <Route path='/login' element={<Login />} />
 
       <Route element={<DashboardLayout />}>
         <Route

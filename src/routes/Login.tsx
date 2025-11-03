@@ -44,10 +44,10 @@ const Login = () => {
   };
 
   return (
-    <div className='bg-light-green flex justify-center items-center min-h-screen'>
+    <div className='bg-light-green flex justify-center p-2 items-center min-h-screen'>
       <form
         onSubmit={handleLogin}
-        className='bg-white p-10 rounded-xl shadow-2xl flex flex-col lg:w-[30rem]  '
+        className='bg-white lg:p-10 p-6  rounded-xl shadow-2xl flex flex-col lg:w-[30rem]  '
       >
         <h2 className='text-center text-dark-green pb-4 text-3xl font-bold'>
           Student Portal Login
